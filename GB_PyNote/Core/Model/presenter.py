@@ -36,4 +36,5 @@ class presenter:
              print("Ошибка ввода номера")
     def del_note(self):
         self.print_notes()
+
         pass
