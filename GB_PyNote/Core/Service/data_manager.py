@@ -44,3 +44,15 @@ class data_manager:
 
         else:
             print("ERROR CHANGE NOTE")
+    
+    def del_note(self, data_delete):
+        new_data = []
+        if isinstance(data_delete, data):
+            for note in self.notes:
+                if data_delete == note:
+                    continue
+                new_data.append(note)
+            self.notes = new_data
+            self.write_notes()
+        else:
+            print("ERROR DELETE NOTE")

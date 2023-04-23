@@ -29,3 +29,8 @@
 
     def __str__(self):
      return f"Заметка N{self.ID}\n{self.header} от {self.created_data}\n{self.body} \x1B[3mпоследнее изменение {self.last_change}\x1B[0m\n"
+    
+    def __eq__(self, other):
+        if isinstance(other, data):
+            return self.ID == other.ID
+        return False

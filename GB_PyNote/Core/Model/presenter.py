@@ -36,5 +36,13 @@ class presenter:
              print("Ошибка ввода номера")
     def del_note(self):
         self.print_notes()
-
-        pass
+        try:
+            number = input("Введите номер заметки для изменения: ")
+            for x in self.manager.notes:
+                 if x.ID == number:
+                     print(x)
+                     sure = input("\nВы уверены что заметку стоит удалить? Это безвозвратное действие!\nВведите номер заметки для подтверждения: ")
+                     if sure == x.ID:
+                         self.manager.del_note(x)
+        except :
+            print("Ошибка ввода номера")
