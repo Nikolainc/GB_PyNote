@@ -21,7 +21,6 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="app\app_01.py" />
     <Compile Include="core\model\presenter.py" />
     <Compile Include="core\service\data_manager.py" />
     <Compile Include="core\model\data_provider.py" />
@@ -30,7 +29,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="core\model\" />
-    <Folder Include="app\" />
     <Folder Include="core\" />
     <Folder Include="Core\service\" />
     <Folder Include="note_sheet\" />
