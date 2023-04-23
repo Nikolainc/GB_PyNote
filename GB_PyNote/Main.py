@@ -8,13 +8,35 @@
 #(команда, данные), можно делать как запрос команды с консоли и
 #последующим вводом данных, как-то ещё, на усмотрение студента
 
+import os
 from Core.Model.presenter import presenter
 
 pres = presenter()
-
-control_num = "-"
-print("Для завершения работы нажмите '-'")
+clear = lambda: os.system('cls')
+control_num = "0"
+print("Для завершения работы нажмите '-'\n")
 
 while(control_num != "-"):
-    print("Список команд:\n0 - Вывести все заметки\n1 - Создать заметку\n2 - изменить заголовок заметки\n3 - изменить заметку\n4 - удалить заметку")
+    print("Список команд:\n0 - Вывести все заметки\n1 - Создать заметку\n2 - изменить заголовок заметки\n3 - изменить заметку\n4 - удалить заметку\n'-' - Выход\n")
+    control_num = input("Введите команду: ")
+    match control_num.split():
+        case ["0"]:
+            clear()
+            pres.print_notes()
+        case ["1"]:
+            clear()
+            pres.create_note()
+        case ["2"]:
+            clear()
+            pres.change_head_note()
+        case ["3"]:
+            clear()
+            pres.change_body_note()
+        case ["4"]:
+            clear()
+            pres.del_note()
+        case ["-"]:
+            quit()
+        case _:
+            print(f"Ошибка ввода команды, я ее не понимаю..")
 
